@@ -10,5 +10,5 @@ RUN pip install numpy scipy matplotlib jupyter
 # Exponer el puerto que Jupyter usará para que podamos acceder desde el navegador
 EXPOSE 8888
 
-# El comando que se ejecutará cuando inicie el contenedor
-CMD ["jupyter", "notebook", "--ip=0.0.0.0", "--port=8888", "--no-browser", "--allow-root"]
+# El comando que se ejecutará cuando inicie el contenedor (con un token fijo)
+CMD ["jupyter", "notebook", "--ip=0.0.0.0", "--port=8888", "--no-browser", "--allow-root", "--NotebookApp.token='simulador'"]
